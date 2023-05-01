@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import MainContent from "./Components/MainContent/MainContent";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 
 function App() {
+
+  const [show, setshow] = useState(false);
+
+  const handle = useFullScreenHandle();
+
+  console.log(handle, 'sssss');
+  const handleSide = () => {
+    setshow(!show)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <FullScreen className="bg-white" handle={handle}>
+        <div className="d-flex">
+          <Sidebar show={show} />
+          <MainContent handleSide={handleSide} handle={handle} />
+        </div>
+      </FullScreen>
+    </>
   );
 }
 

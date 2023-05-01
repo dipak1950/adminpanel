@@ -1,0 +1,35 @@
+.sidebar {
+    width: 280px;
+    --bs-primary-rgb: 42, 43, 54;
+    transition: all 0.5s;
+    position: fixed;
+    /* overflow-y: scroll; */
+}
+
+.logo {
+    background-color: #22222f;
+}
+
+nav ul li a {
+    color: rgba(255, 255, 255, 0.6);
+
+}
+
+nav ul li:hover {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #353640;
+}
+
+nav ul li a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+nav ul li .icons {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.hide {
+    width: 0;
+    padding: 0 !important;
+    overflow: hidden;
+}
